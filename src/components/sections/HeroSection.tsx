@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, Linkedin, Github, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profileImage from '@/assets/mani-profile.jpg';
+import profileImage from '@/assets/FullSizeRender.jpg';
 
 const HeroSection = () => {
   const contactLinks = [
