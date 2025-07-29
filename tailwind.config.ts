@@ -61,7 +61,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				portfolio: {
+					'text-light': 'hsl(var(--text-light))',
+					'section-bg': 'hsl(var(--section-bg))',
+					'skill-bg': 'hsl(var(--skill-bg))'
 				}
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-primary': 'var(--gradient-primary)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
