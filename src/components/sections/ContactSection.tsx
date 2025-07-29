@@ -39,9 +39,9 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Kansas City, MO, USA',
+      value: 'Edison, NJ, USA',
       href: null,
-      description: 'Available for remote work'
+      description: 'Available to Relocate'
     }
   ];
 

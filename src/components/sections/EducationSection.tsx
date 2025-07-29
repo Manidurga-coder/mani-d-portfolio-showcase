@@ -55,29 +55,42 @@ const EducationSection = () => {
 
   const certifications = [
     {
-      title: 'AWS Certified Solutions Architect',
+      title: 'AWS Certified Practioner',
       issuer: 'Amazon Web Services',
-      status: 'In Progress',
-      color: 'bg-orange-500/10 text-orange-600 border-orange-500/20'
+      status: 'Completed',
+      color: 'bg-green-500/10 text-green-600 border-green-500/20'
     },
     {
       title: 'Oracle Certified Professional, Java SE',
       issuer: 'Oracle',
       status: 'Planned',
-      color: 'bg-red-500/10 text-red-600 border-red-500/20'
+      color: 'bg-blue-500/10 text-blue-600 border-blue-500/20'
     },
     {
       title: 'Spring Professional Certification',
       issuer: 'Pivotal/VMware',
       status: 'Planned',
-      color: 'bg-green-500/10 text-green-600 border-green-500/20'
+      color: 'bg-blue-500/10 text-blue-600 border-blue-500/20'
     },
     {
       title: 'React Developer Certification',
       issuer: 'Meta',
       status: 'Planned',
       color: 'bg-blue-500/10 text-blue-600 border-blue-500/20'
-    }
+    },
+    {
+      title: 'Carrier Essentials in Software Development',
+      issuer: 'Microsoft',
+      status: 'Completed',
+      color: 'bg-green-500/10 text-green-600 border-green-500/20'
+    },
+
+ {
+      title: 'Gitub Proffessional Certificate',
+      issuer: 'Github',
+      status: 'Completed',
+      color: 'bg-green-500/10 text-green-600 border-green-500/20'
+    },
   ];
 
   return (

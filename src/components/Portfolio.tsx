@@ -71,10 +71,10 @@ const Portfolio = () => {
       >
         <div className="container mx-auto px-6 text-center">
           <p className="text-portfolio-text-light">
-            © 2025 Mani Durga Kanaparthi. Built with React, TypeScript, and Tailwind CSS.
+            © 2025 Mani Durga Kanaparthi. All Rights Reserved.
           </p>
           <p className="text-sm text-portfolio-text-light mt-2">
-            Designed with ❤️ and lots of ☕
+           
           </p>
         </div>
       </motion.footer>

@@ -26,7 +26,7 @@ const ProjectsSection = () => {
       category: 'Full Stack',
       status: 'Production',
       github: '#',
-      live: '#'
+      
     },
     {
       title: 'Loan Origination & Approval Management',
@@ -177,7 +177,7 @@ const ProjectsSection = () => {
                           <Github size={16} className="mr-2 group-hover:scale-110 transition-transform" />
                           View Code
                         </Button>
-                        {project.live && (
+                       {/* {project.live && (
                           <Button variant="outline" size="sm" className="group">
                             <ExternalLink size={16} className="mr-2 group-hover:scale-110 transition-transform" />
                             Live Demo
@@ -188,7 +188,7 @@ const ProjectsSection = () => {
                             <ExternalLink size={16} className="mr-2 group-hover:scale-110 transition-transform" />
                             Demo
                           </Button>
-                        )}
+                        )}*/}
                       </div>
                     </div>
                   </div>
