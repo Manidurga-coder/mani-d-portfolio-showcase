@@ -3,6 +3,8 @@ import { Mail, Phone, Linkedin, Github, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profileImage from '@/assets/FullSizeRender.jpg';
 
+
+
 const HeroSection = () => {
   const contactLinks = [
     {
@@ -79,6 +81,7 @@ const HeroSection = () => {
               <span className="text-primary font-semibold">Java</span>,{' '}
               <span className="text-primary font-semibold">Spring Boot</span>, and{' '}
               <span className="text-primary font-semibold">React.js</span>. 
+              <span className="text-primary font-semibold"> and Angular</span>. 
               5+ years of experience in creating robust solutions for finance, e-commerce, and manufacturing.
             </motion.p>
 
@@ -121,10 +124,13 @@ const HeroSection = () => {
                 <Mail size={18} className="mr-2 group-hover:scale-110 transition-transform" />
                 Let's Connect
               </Button>
-              <Button variant="outline" size="lg" className="group">
-                <Download size={18} className="mr-2 group-hover:scale-110 transition-transform" />
-                Download Resume
-              </Button>
+              <Button asChild variant="outline" size="lg" className="group">
+ <a href="/Manidurga_Kanaparthi_resume_2025.pdf"
+download="Manidurda_Kanaparthi_Resume.pdf"
+className="flex items-center">
+ <Download size={18} className="mr-2 group-hover:scale-110 transition-transform" />
+Download Resume
+</a></Button>
             </motion.div>
           </motion.div>
 
