@@ -60,12 +60,12 @@ const HeroSection = () => {
               className="space-y-2"
             >
               <p className="text-lg text-portfolio-text-light">Hi there 👋</p>
-              <h2 className="text-4xl md:text-6xl font-bold text-foreground">
+              <h3 className="text-4xl md:text-6xl font-bold text-foreground">
                 I'm{' '}
                 
                   <p>Mani Durga Kanaparthi</p>
                 
-              </h2>
+              </h3>
               <p className="text-xl md:text-2xl text-portfolio-text-light">
                 Full Stack Java Developer
               </p>
