@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, Linkedin, Github, Download } from 'lucide-react';
+import { Eye, Mail, Phone, Linkedin, Github, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profileImage from '@/assets/FullSizeRender.jpg';
 
@@ -60,12 +60,12 @@ const HeroSection = () => {
               className="space-y-2"
             >
               <p className="text-lg text-portfolio-text-light">Hi there 👋</p>
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground">
+              <h2 className="text-4xl md:text-6xl font-bold text-foreground">
                 I'm{' '}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Mani Durga Kanaparthi
-                </span>
-              </h1>
+                
+                  <p>Mani Durga Kanaparthi</p>
+                
+              </h2>
               <p className="text-xl md:text-2xl text-portfolio-text-light">
                 Full Stack Java Developer
               </p>
@@ -120,13 +120,24 @@ const HeroSection = () => {
               transition={{ delay: 1 }}
               className="flex gap-4 pt-4"
             >
-              <Button size="lg" className="group">
-                <Mail size={18} className="mr-2 group-hover:scale-110 transition-transform" />
-                Let's Connect
-              </Button>
+              <Button
+    asChild
+    size="lg"
+    className="group"
+  >
+    <a
+      href="/MANI_DURGA_KANAPARTHI_OPJ.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center"
+    >
+      <Eye size={18} className="mr-2 group-hover:scale-110 transition-transform" />
+      View Resume
+    </a>
+  </Button>
               <Button asChild variant="outline" size="lg" className="group">
- <a href="/Manidurga_Kanaparthi_resume_2025.pdf"
-download="Manidurda_Kanaparthi_Resume.pdf"
+ <a href="/MANI_DURGA_KANAPARTHI_OPJ.pdf"
+download="MANI_DURGA_KANAPARTHI_OPJ"
 className="flex items-center">
  <Download size={18} className="mr-2 group-hover:scale-110 transition-transform" />
 Download Resume
