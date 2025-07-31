@@ -126,7 +126,7 @@ const HeroSection = () => {
     className="group"
   >
     <a
-      href="/MANI_DURGA_KANAPARTHI_OPJ.pdf"
+      href="/Manidurga_FullStackDeveloper_resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center"
