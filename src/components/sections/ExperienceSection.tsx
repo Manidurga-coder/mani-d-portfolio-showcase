@@ -20,25 +20,11 @@ const ExperienceSection = () => {
       ],
       technologies: ['Spring Boot', 'React.js', 'AWS', 'Docker', 'Jenkins', 'JWT', 'OAuth2', 'Microservices']
     },
+    
     {
-      title: 'Full Stack Developer',
-      company: 'Loan Origination System',
-      location: 'Academic Project',
-      period: 'Aug 2023 – Jan 2025',
-      type: 'Project',
-      description: [
-        'Designed and developed a comprehensive loan management platform using React with Redux for efficient state management',
-        'Built robust backend APIs with Spring Boot 3.x and Spring Security for authentication and authorization',
-        'Integrated Chart.js for interactive dashboards displaying loan statistics, approval rates, and KPI metrics',
-        'Implemented role-based access control for loan officers, underwriters, and administrators',
-        'Created automated workflows for loan application processing with real-time status updates'
-      ],
-      technologies: ['React.js', 'Redux', 'Spring Boot 3.x', 'Spring Security', 'Chart.js', 'MySQL']
-    },
-    {
-      title: 'Software Engineer',
-      company: 'Keysight Technologies',
-      location: 'Bangalore, India',
+      title: 'Full Stack Java Developer',
+      company: 'Tata Consultancy Services',
+      location: 'Hyderabad, India',
       period: 'Jun 2021 – Jun 2023',
       type: 'Full-time',
       description: [
@@ -51,8 +37,8 @@ const ExperienceSection = () => {
       technologies: ['Angular', 'TypeScript', 'Spring Boot', 'JWT', 'Docker', 'Jenkins', 'PostgreSQL']
     },
     {
-      title: 'Frontend Developer',
-      company: 'Plus 20 Enterprises',
+      title: 'Web Developer',
+      company: 'FedEx',
       location: 'Hyderabad, India',
       period: 'Jun 2020 – Jun 2021',
       type: 'Full-time',

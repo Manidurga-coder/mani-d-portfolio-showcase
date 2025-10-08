@@ -32,7 +32,7 @@ const EducationSection = () => {
       degree: 'Bachelor of Technology in Computer Science',
       institution: 'CMR Institute of Technology',
       location: 'Hyderabad, India',
-      period: '2016 - 2020',
+      period: '2017 - 2021',
       gpa: '3.7/4.0',
       type: 'Undergraduate',
       highlights: [

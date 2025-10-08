@@ -3,25 +3,27 @@ import { ExternalLink, Github, Code, Database, Cloud, Shield } from 'lucide-reac
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import SecureChatImage from '@/assets/SecureChat_3.png';
+import LoanManagerImage from '@/assets/LoanOrigination.jpg';
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'Digital Banking Backend Platform',
-      description: 'Comprehensive microservices-based banking platform handling customer onboarding, transaction processing, and account management with high scalability and security.',
+      title: 'Secure Chat Application',
+      description: 'End-to-end encrypted real-time chat application enabling secure communication between users using Java Servlets, WebSockets, and Angular frontend.',
       longDescription: [
-        'Built end-to-end customer onboarding system with automated KYC verification and document processing',
-        'Implemented real-time transaction processing engine handling 10,000+ transactions per minute',
-        'Designed scalable microservices architecture using Spring Boot with service discovery via Eureka',
-        'Integrated AWS services for secure data storage, processing, and automated scaling',
-        'Implemented comprehensive security measures including JWT authentication and OAuth2 authorization'
+        'Developed a real-time chat system enabling one-to-one and group communication using WebSockets for instant message delivery',
+    'Built a Java Servlet-based backend to handle session management, user authentication, and message persistence securely',
+    'Integrated WebSocket protocol for bidirectional communication with dynamic message broadcasting and delivery acknowledgments',
+    'Implemented Angular-based responsive frontend supporting live updates, typing indicators, and message notifications',
+    'Ensured message security using AES encryption for data-in-transit and structured session-based access control'
       ],
-      technologies: ['Spring Boot', 'Microservices', 'AWS', 'React.js', 'Docker', 'Jenkins', 'JWT', 'PostgreSQL'],
+      technologies: ['Java Servlets', 'WebSockets', 'Angular', 'HTML5', 'CSS3', 'MySQL', 'Tomcat'],
       features: [
-        { icon: Code, text: 'Microservices Architecture' },
+        { icon: Code, text: 'WebSocket Messaging' },
         { icon: Database, text: 'Real-time Processing' },
-        { icon: Cloud, text: 'AWS Cloud Integration' },
-        { icon: Shield, text: 'Enterprise Security' }
+        { icon: Cloud, text: 'Session Management'  },
+        { icon: Shield, text: 'End-to-End Encryption'  }
       ],
       category: 'Full Stack',
       status: 'Production',
@@ -83,39 +85,50 @@ const ProjectsSection = () => {
               <Card className="overflow-hidden border-border hover:border-primary/30 transition-all duration-300 bg-card/50 backdrop-blur-sm">
                 <div className="grid lg:grid-cols-3 gap-0">
                   {/* Project Image/Visual */}
-                  <motion.div 
-                    className="lg:col-span-1 bg-gradient-primary p-8 flex items-center justify-center relative overflow-hidden"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <div className="text-center text-white relative z-10">
-                      <div className="w-20 h-20 mx-auto mb-4 bg-white/20 rounded-2xl flex items-center justify-center">
-                        <Code size={32} className="text-white" />
-                      </div>
-                      <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                        {project.category}
-                      </Badge>
-                      <div className="mt-4">
-                        <Badge 
-                          variant="outline" 
-                          className={`${
-                            project.status === 'Production' 
-                              ? 'bg-green-500/20 text-green-100 border-green-500/30' 
-                              : 'bg-blue-500/20 text-blue-100 border-blue-500/30'
-                          }`}
-                        >
-                          {project.status}
-                        </Badge>
-                      </div>
-                    </div>
-                    
-                    {/* Background Pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="absolute top-4 left-4 w-8 h-8 border border-white rounded-full" />
-                      <div className="absolute bottom-8 right-8 w-12 h-12 border border-white rounded-lg" />
-                      <div className="absolute top-1/2 right-4 w-6 h-6 bg-white rounded-full" />
-                    </div>
-                  </motion.div>
+                 {/* Project Image + Badges */}
+{/* Project Image + Badges */}
+<motion.div 
+  className="lg:col-span-1 relative pt-6 px-4 pb-4 flex flex-col items-center justify-start overflow-hidden"
+  whileHover={{ scale: 1.02 }}
+  transition={{ type: 'spring', stiffness: 300 }}
+>
+  {/* Image per project */}
+  <div className="w-full h-48 relative rounded-xl overflow-hidden">
+    <img
+      src={index === 0 ? SecureChatImage : LoanManagerImage}
+      alt="Project Visual"
+      className="object-cover w-full h-full rounded-xl"
+    />
+  </div>
+
+  {/* Badges under Image */}
+  <div className="flex flex-col items-center gap-2 mt-4">
+    <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center">
+      <Code size={28} className="text-white" />
+    </div>
+    <Badge 
+  variant="secondary"
+  className="bg-white/20 text-white border-white/30 px-4 py-2 text-sm md:text-base rounded-xl"
+>
+  {project.category}
+</Badge>
+    <Badge 
+  variant="outline" 
+  className={`px-4 py-2 text-sm md:text-base rounded-xl ${
+    project.status === 'Production' 
+      ? 'bg-green-500/20 text-green-100 border-green-500/30' 
+      : 'bg-blue-500/20 text-blue-100 border-blue-500/30'
+  }`}
+>
+  {project.status}
+</Badge>
+
+  </div>
+</motion.div>
+
+
+
+
 
                   {/* Project Details */}
                   <div className="lg:col-span-2 p-6">

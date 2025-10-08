@@ -1,200 +1,161 @@
 import { motion } from 'framer-motion';
-import { Eye, Mail, Phone, Linkedin, Github, Download } from 'lucide-react';
+import { Eye, Mail, Phone, Linkedin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profileImage from '@/assets/FullSizeRender.jpg';
-
-
+import { useEffect, useState } from 'react';
+import AnimatedName from './AnimatedName';
 
 const HeroSection = () => {
+  const roles = ['Full Stack Java Developer', 'Software Engineer'];
+  const [currentRole, setCurrentRole] = useState(0);
+
+  // Role animation loop
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000); // Change every 2.5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   const contactLinks = [
     {
       icon: Mail,
       href: 'mailto:manidurga4999@gmail.com',
       label: 'Email',
-      text: 'manidurga4999@gmail.com'
+      text: 'manidurga4999@gmail.com',
     },
     {
       icon: Phone,
       href: 'tel:+19134564774',
       label: 'Phone',
-      text: '+1 (913) 456-4774'
+      text: '+1 (913) 456-4774',
     },
     {
       icon: Linkedin,
       href: 'https://linkedin.com/in/manidurga-kanaparthi',
       label: 'LinkedIn',
-      text: 'LinkedIn Profile'
-    }
+      text: 'LinkedIn Profile',
+    },
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">
-      {/* Background animation */}
-      <div className="absolute inset-0 opacity-20">
+    <section
+  id="home"
+  className="min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden px-6 py-16"
+  style={{
+    backgroundImage: "url('/assets/dev-bg.jpg')",  // replace with real path
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+  <div className="absolute inset-0 bg-black/60 z-0" />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
+
+      <div className="relative z-10 max-w-3xl w-full">
+        {/* Profile Photo */}
         <motion.div
-          animate={{
-            backgroundPosition: ['0% 0%', '100% 100%'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-          className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30"
-        />
-      </div>
+  initial={{ opacity: 0, y: -30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="mb-6 z-10"
+>
+  <div className="mt-[-40px] mb-6 z-10">
+  <img
+    src={profileImage}
+    alt="Mani Durga Kanaparthi"
+    className="w-48 h-48 md:w-45 md:h-45 rounded-full object-cover border-4 border-primary shadow-2xl ring-4 ring-primary/30 mx-auto"
+    style={{ objectPosition: 'center 30%'  }}
+  />
+</div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="space-y-2"
-            >
-              <p className="text-lg text-portfolio-text-light">Hi there 👋</p>
-              <h3 className="text-4xl md:text-6xl font-bold text-foreground">
-                I'm{' '}
-                
-                  <p>Mani Durga Kanaparthi</p>
-                
-              </h3>
-              <p className="text-xl md:text-2xl text-portfolio-text-light">
-                Full Stack Java Developer
-              </p>
-            </motion.div>
+</motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-lg text-portfolio-text-light max-w-lg leading-relaxed"
-            >
-              Passionate about building scalable applications with{' '}
-              <span className="text-primary font-semibold">Java</span>,{' '}
-              <span className="text-primary font-semibold">Spring Boot</span>, and{' '}
-              <span className="text-primary font-semibold">React.js</span>. 
-              <span className="text-primary font-semibold"> and Angular</span>. 
-              5+ years of experience in creating robust solutions for finance, e-commerce, and manufacturing.
-            </motion.p>
 
-            {/* Contact Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-4"
-            >
-              {contactLinks.map((link, index) => {
-                const Icon = link.icon;
-                return (
-                  <motion.a
-                    key={link.label}
-                    href={link.href}
-                    target={link.href.startsWith('http') ? '_blank' : undefined}
-                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.8 + index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-lg border border-border hover:bg-card/80 transition-all duration-200"
-                  >
-                    <Icon size={18} className="text-primary" />
-                    <span className="text-sm text-foreground">{link.text}</span>
-                  </motion.a>
-                );
-              })}
-            </motion.div>
+        {/* Name and Role */}
+       <AnimatedName />
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              className="flex gap-4 pt-4"
-            >
-              <Button
-    asChild
-    size="lg"
-    className="group"
-  >
-    <a
-      href="/Manidurga_FullStackDeveloper_resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center"
-    >
-      <Eye size={18} className="mr-2 group-hover:scale-110 transition-transform" />
-      View Resume
-    </a>
-  </Button>
-              <Button asChild variant="outline" size="lg" className="group">
- <a href="/MANI_DURGA_KANAPARTHI_OPJ.pdf"
-download="MANI_DURGA_KANAPARTHI_OPJ"
-className="flex items-center">
- <Download size={18} className="mr-2 group-hover:scale-110 transition-transform" />
-Download Resume
-</a></Button>
-            </motion.div>
-          </motion.div>
+<motion.h2
+  key={currentRole}
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  className="text-lg md:text-xl text-purple-300 font-large mb-4 mt-4"
+>
+  {roles[currentRole]}
+</motion.h2>
 
-          {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="relative"
+
+        {/* Summary */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-md md:text-lg text-gray-200 leading-relaxed mb-6"
+        >
+          Passionate about building scalable applications with{' '}
+          <span className="text-primary font-semibold">Java</span>,{' '}
+          <span className="text-primary font-semibold">Spring Boot</span>,{' '}
+          <span className="text-primary font-semibold">React.js</span>, and{' '}
+          <span className="text-primary font-semibold">Angular</span>. <br />
+          5+ years of experience creating robust solutions for finance, e-commerce, and manufacturing.
+        </motion.p>
+
+        {/* Contact Links */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="flex flex-wrap justify-center gap-4 mb-6"
+        >
+          {contactLinks.map((link, index) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg backdrop-blur-sm border border-white/20 transition-all text-white text-sm"
+              >
+                <Icon size={18} className="text-primary" />
+                {link.text}
+              </a>
+            );
+          })}
+        </motion.div>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="flex flex-wrap justify-center gap-4"
+        >
+          <Button asChild size="lg" className="group">
+            <a
+              href="/Manidurga_Kanaparthi_Fullstackjava_resume2.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center"
             >
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl relative">
-                <img
-                  src={profileImage}
-                  alt="Mani Durga Kanaparthi"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-              </div>
-              
-              {/* Floating decoration */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                  rotate: [0, 5, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-                className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full backdrop-blur-sm border border-primary/20"
-              />
-              
-              <motion.div
-                animate={{
-                  y: [0, 15, 0],
-                  rotate: [0, -8, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-                className="absolute -bottom-6 -left-6 w-16 h-16 bg-secondary/20 rounded-full backdrop-blur-sm border border-secondary/30"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
+              <Eye size={18} className="mr-2 group-hover:scale-110 transition-transform" />
+              View Resume
+            </a>
+          </Button>
+
+          <Button asChild variant="outline" size="lg" className="group">
+            <a
+              href="/Manidurga_Kanaparthi_Fullstackjava_resume2.pdf"
+              download="Manidurga_Kanaparthi_Fullstackjava_resume2"
+              className="flex items-center"
+            >
+              <Download size={18} className="mr-2 group-hover:scale-110 transition-transform" />
+              Download Resume
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
